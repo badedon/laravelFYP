@@ -50,7 +50,16 @@ Route::post('/create-users',[UsersController::class,'createUsers'])->name('users
 
 
 //routing for event
-Route::get('/events',[EventController::class,'eventAdmin'])->name('event');
+Route::get('/event',[EventController::class,'eventAdmin'])->name('event');
+Route::post('/create-event',[EventController::class,'createEvent'])->name('event.create');
+Route::get('/events',[EventController::class,'getEvent']);
+Route::get('/events/{id}',[EventController::class,'getEventById']);
+Route::get('/delete-event/{id}',[EventController::class,'deleteEvent']);
+Route::get('/edit-event/{id}',[EventController::class,'editEvent']);
+Route::put('/update-event',[EventController::class,'updateEvent'])->name('event.update');
+
+
+
 
 //routing for voting result
 Route::get('/result',[ResultController::class,'resultAdmin'])->name('result');

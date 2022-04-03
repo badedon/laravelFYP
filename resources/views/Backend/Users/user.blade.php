@@ -42,10 +42,10 @@
                                     </span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="body">User Name</label>
-                                            <input type="text" name="username" class="form-control" rows="3"/>
+                                            <label for="body">Email</label>
+                                            <input type="text" name="email" class="form-control" rows="3"/>
                                             <span class="alert-danger">
-                                        @error('position'){{$message}}@enderror
+                                        @error('email'){{$message}}@enderror
                                     </span>
 
                                         </div>
@@ -58,10 +58,10 @@
                                     </span>
 
                                             <div class="form-group">
-                                                <label for="body"> Year</label>
-                                                <input type="text" name="year" class="form-control" rows="3"/>
+                                                <label for="body"> Is_Admin</label>
+                                                <input type="text" name="is_admin" class="form-control" rows="3"/>
                                                 <span class="alert-danger">
-                                        @error('position'){{$message}}@enderror
+                                        @error('is_admin'){{$message}}@enderror
                                     </span>
 
                                             </div>
@@ -121,7 +121,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>User name</th>
+                        <th>is_admin</th>
                         <th> Password</th>
                         <th>Year</th>
                         <th>Action</th>
@@ -132,7 +132,7 @@
                         <tr>
                             <td>{{$can->id}}</td>
                             <td>{{$can->name}}</td>
-                            <td>{{$can->username}}</td>
+                            <td>{{$can->is_admin}}</td>
                             <td>{{$can->password}}</td>
                             <td>{{$can->year}}</td>
 

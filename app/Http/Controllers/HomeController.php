@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('is_admin');
+        $this->middleware(['auth:sanctum', 'verified', 'is_admin']);
     }
 
     /**

@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Event;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use function back;
+use function public_path;
+use function redirect;
 use function view;
+
 
 class EventController extends Controller
 {
@@ -14,6 +19,10 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware(['auth:sanctum', 'verified', 'is_admin']);
+    }
     public function index()
     {
         //
@@ -24,69 +33,63 @@ class EventController extends Controller
         return view('\Backend\events\event',compact('event'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function createEvent(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'location' => 'required',
+
+        ]);
+        //handle file upload
+
+        //for deleting image use unlink() function.
+        //for storing image
+
+        $event= new Event();
+        $event->name = $request->name;
+        $event->location = $request->location;
+        $event->startdate = $request->startdate;
+        $event->enddate = $request->enddate;
+        return back()->with('event_created', 'Event has been created successfully!');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getEvent()
     {
-        //
+        $event= Event::orderBy('id', 'DESC')->get();
+        return view('events', compact('event'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Event $event)
+    public function getEventById($id)
     {
-        //
+        $event= Event::where('id', $id)->first();
+        return view('\Backend\Event\view-event', compact('event'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Event $event)
+    public function deleteEvent($id)
     {
-        //
+        $event= Event::findOrFail($id);
+        $event->delete();
+        return back()->with('event_deleted', 'Event has been deleted successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Event $event)
+
+    public function editEvent($id)
     {
-        //
+        $event= Event::find($id);
+        return view('\Backend\Event\edit-event', compact('event'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Event $event)
+    public function updateEvent(Request $request)
     {
-        //
+
+        $event= Event::find($request->id);
+        $event->name = $request->name;
+        $event->location = $request->location;
+        $event->startdate = $request->startdate;
+        $event->enddate = $request->enddate;
+
+        $event->update();
+        return redirect('event')->with('event_updated', "Event has been updated successfully");
+
     }
 }

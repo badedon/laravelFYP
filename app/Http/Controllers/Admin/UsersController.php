@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\File;
 
 class UsersController extends Controller
 {
-    public function __construct() {
-        $this->middleware('is_admin');
+    public function __construct()
+    {
+        $this->middleware(['auth:sanctum', 'verified', 'is_admin']);
     }
     public function index()
     {
@@ -20,14 +21,13 @@ class UsersController extends Controller
     public function usersAdmin()
     {
         $users= Users::get();
-        $candidates = Candidates::all();
         return view('\Backend\Users\user',compact('users'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function createUsers(Request $request)
     {
@@ -35,7 +35,7 @@ class UsersController extends Controller
             'name' => 'required',
             'username' => 'required',
             'password' => 'required',
-            'year' => 'required',
+            'is_admin' => 'nullable',
         ]);
         //handle file upload
 
@@ -46,7 +46,7 @@ class UsersController extends Controller
         $users->name = $request->name;
         $users->username = $request->username;
         $users->password = $request->password;
-        $users->year = $request->year;
+        $users->is_admin = $request->is_admin;
         $users->save();
         return back()->with('users_created', 'Users has been created successfully!');
     }
