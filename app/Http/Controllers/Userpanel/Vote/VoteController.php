@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Userpanel\Vote;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candidates;
 use App\Models\Userhome;
 use App\Models\Vote;
 use Illuminate\Http\Request;
@@ -12,11 +13,13 @@ class VoteController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return view('frontend/Vote/uservote');
+
+        $uservote= Candidates::get();
+        return view('\frontend\Vote\uservote',compact('uservote'));
     }
 //    public function uservote()
 //    {

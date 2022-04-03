@@ -1,5 +1,5 @@
-@extends('layouts.welcome')
-   
+@extends('Backend.backendLayout')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

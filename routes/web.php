@@ -26,7 +26,7 @@ Route::get('/', function () {
     return view('frontend.layout.master');
 });
 
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome')->middleware('is_admin');
 
 Auth::routes();
 
