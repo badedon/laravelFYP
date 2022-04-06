@@ -43,21 +43,20 @@
                                         <div class="form-group">
                                             <label for="body">Candidates Position</label>
                                             <input type="text" name="position" class="form-control" rows="3"/>
-
-{{--                                            <select name="Position" id="lang">--}}
-{{--                                                <option value="President">President</option>--}}
-{{--                                                <option value="php">PHP</option>--}}
-{{--                                                <option value="java">Java</option>--}}
-{{--                                                <option value="golang">Golang</option>--}}
-{{--                                                <option value="python">Python</option>--}}
-{{--                                                <option value="c#">C#</option>--}}
-{{--                                                <option value="C++">C++</option>--}}
-{{--                                                <option value="erlang">Erlang</option>--}}
-{{--                                            </select>--}}
-
-
                                             <span class="alert-danger">
                                         @error('position'){{$message}}@enderror
+                                    </span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="body">Event</label>
+                                            <select name="event_id" class="form-control" id="exampleFormControlSelect1">
+                                                @foreach($event as $evt)
+                                                <option value="{{$evt->id}}">{{$evt->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            <span class="alert-danger">
+                                        @error('event_id'){{$message}}@enderror
                                     </span>
                                         </div>
 
@@ -120,6 +119,7 @@
                     <th>ID</th>
                     <th>Candidates name</th>
                     <th>Candidates Position</th>
+                    <th>Event</th>
                     <th> Candidates Image</th>
                     <th>Action</th>
                 </tr>
@@ -130,6 +130,7 @@
                         <td>{{$can->id}}</td>
                         <td>{{$can->name}}</td>
                         <td>{{$can->position}}</td>
+                        <td>{{$can->event->name}}</td>
                         <td><img src="{{asset('uploads/'.$can->image)}}"
                                  alt="No image" width="80" height="80"></td>
                         <td>

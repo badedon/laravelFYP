@@ -1,7 +1,7 @@
 <?php
 //adding candidates controller path
 use App\Http\Controllers\Candidates\CandidatesController;
-use App\Http\Controllers\Event\EventController;
+use App\Http\Controllers\Event\EventOneController;
 use App\Http\Controllers\Userpanel\Contact\ContactController;
 use App\Http\Controllers\VotingResult\ResultController;
 use App\Http\Controllers\Admin\UsersController;
@@ -45,18 +45,24 @@ Route::get('/edit-candidates/{id}',[CandidatesController::class,'editCandidates'
 Route::put('/update-candidates',[CandidatesController::class,'updateCandidates'])->name('candidates.update');
 
 //Routing for user
-Route::get('/users',[UsersController::class,'usersAdmin'])->name('users');
+Route::get('/user',[UsersController::class,'usersAdmin'])->name('users');
 Route::post('/create-users',[UsersController::class,'createUsers'])->name('users.create');
+Route::get('/users',[UsersController::class,'getUsers']);
+Route::get('/users/{id}',[UsersController::class,'getUsersById']);
+Route::get('/delete-user/{id}',[UsersController::class,'deleteUsers']);
+Route::get('/edit-user/{id}',[UsersController::class,'editUsers']);
+Route::put('/update-user',[UsersController::class,'updateUsers'])->name('user.update');
+
 
 
 //routing for event
-Route::get('/event',[EventController::class,'eventAdmin'])->name('event');
-Route::post('/create-event',[EventController::class,'createEvent'])->name('event.create');
-Route::get('/events',[EventController::class,'getEvent']);
-Route::get('/events/{id}',[EventController::class,'getEventById']);
-Route::get('/delete-event/{id}',[EventController::class,'deleteEvent']);
-Route::get('/edit-event/{id}',[EventController::class,'editEvent']);
-Route::put('/update-event',[EventController::class,'updateEvent'])->name('event.update');
+Route::get('/event',[EventOneController::class,'eventAdmin'])->name('event');
+Route::post('/create-event',[EventOneController::class,'createEvent'])->name('event.create');
+Route::get('/events',[EventOneController::class,'getEvent']);
+Route::get('/events/{id}',[EventOneController::class,'getEventById']);
+Route::get('/delete-event/{id}',[EventOneController::class,'deleteEvent']);
+Route::get('/edit-event/{id}',[EventOneController::class,'editEvent']);
+Route::put('/update-event',[EventOneController::class,'updateEvent'])->name('event.update');
 
 
 

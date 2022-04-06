@@ -44,21 +44,8 @@
                                         <div class="form-group">
                                             <label for="body">Event Location</label>
                                             <input type="text" name="location" class="form-control" rows="3"/>
-
-                                            {{--                                            <select name="Position" id="lang">--}}
-                                            {{--                                                <option value="President">President</option>--}}
-                                            {{--                                                <option value="php">PHP</option>--}}
-                                            {{--                                                <option value="java">Java</option>--}}
-                                            {{--                                                <option value="golang">Golang</option>--}}
-                                            {{--                                                <option value="python">Python</option>--}}
-                                            {{--                                                <option value="c#">C#</option>--}}
-                                            {{--                                                <option value="C++">C++</option>--}}
-                                            {{--                                                <option value="erlang">Erlang</option>--}}
-                                            {{--                                            </select>--}}
-
-
                                             <span class="alert-danger">
-                                        @error('position'){{$message}}@enderror
+                                        @error('location'){{$message}}@enderror
                                     </span>
                                         </div>
 

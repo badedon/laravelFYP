@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Candidates;
 
 use App\Http\Controllers\Controller;
 use App\Models\Candidates;
+use App\Models\EventOne;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use function back;
@@ -18,8 +19,9 @@ class CandidatesController extends Controller
     }
     public function candidatesAdmin()
     {
-        $candidates= Candidates::get();
-        return view('\Backend\Candidates\Candidate',compact('candidates'));
+        $event = EventOne::get();
+        $candidates= Candidates::with('event')->get();
+        return view('\Backend\Candidates\Candidate',compact('candidates','event'));
     }
 
 
@@ -28,7 +30,8 @@ class CandidatesController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'position' => 'required',
-            'image' => 'image|nullable'
+            'image' => 'image|nullable',
+            'event_id' => 'required'
         ]);
         //handle file upload
 
@@ -38,6 +41,7 @@ class CandidatesController extends Controller
         $candidates = new Candidates();
         $candidates->name = $request->name;
         $candidates->position = $request->position;
+        $candidates->event_id = $request->event_id;
         if ($request->hasFile('image')) {
             $image_extension = $request->image->getClientOriginalExtension();
             $image_name = rand(11111, 99999) . "." . $image_extension;
@@ -89,7 +93,7 @@ class CandidatesController extends Controller
         $candidates = Candidates::find($request->id);
         $candidates->name = $request->name;
         $candidates->position = $request->position;
-
+        $candidates->event_id = $request->event_id;
         if ($request->hasFile('image')) {
             //getting file name with the extension
             $candidates = Candidates::findOrFail($candidates->id);

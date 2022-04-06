@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Candidates;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+
 
 class UsersController extends Controller
 {
@@ -20,7 +20,7 @@ class UsersController extends Controller
     }
     public function usersAdmin()
     {
-        $users= Users::get();
+        $users= User::get();
         return view('\Backend\Users\user',compact('users'));
     }
 
@@ -33,7 +33,6 @@ class UsersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'username' => 'required',
             'password' => 'required',
             'is_admin' => 'nullable',
         ]);
@@ -42,9 +41,9 @@ class UsersController extends Controller
         //for deleting image use unlink() function.
         //for storing image
 
-        $users = new Users();
+        $users = new User();
         $users->name = $request->name;
-        $users->username = $request->username;
+        $users->email = $request->email;
         $users->password = $request->password;
         $users->is_admin = $request->is_admin;
         $users->save();
@@ -53,19 +52,19 @@ class UsersController extends Controller
 
     public function getUsers()
     {
-        $users = Users::orderBy('id', 'DESC')->get();
+        $users = User::orderBy('id', 'DESC')->get();
         return view('userss', compact('users'));
     }
 
     public function getUsersById($id)
     {
-        $users = Users::where('id', $id)->first();
+        $users = User::where('id', $id)->first();
         return view('\Backend\Users\view-users', compact('users'));
     }
 
     public function deleteUsers($id)
     {
-        $users = Users::findOrFail($id);
+        $users = User::findOrFail($id);
 
         $users->delete();
         return back()->with('users_deleted', 'Users has been deleted successfully');
@@ -74,14 +73,14 @@ class UsersController extends Controller
 
     public function editUsers($id)
     {
-        $users = Users::find($id);
+        $users = User::find($id);
         return view('\Backend\Users\edit-users', compact('users'));
     }
 
     public function updateUsers(Request $request)
     {
 
-        $users = Users::find($request->id);
+        $users = User::find($request->id);
         $users->name = $request->name;
         $users->username = $request->username;
         $users->password = $request->password;

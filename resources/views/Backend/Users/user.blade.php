@@ -121,9 +121,9 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>is_admin</th>
                         <th> Password</th>
-                        <th>Year</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -132,9 +132,9 @@
                         <tr>
                             <td>{{$can->id}}</td>
                             <td>{{$can->name}}</td>
+                            <td>{{$can->email}}</td>
                             <td>{{$can->is_admin}}</td>
                             <td>{{$can->password}}</td>
-                            <td>{{$can->year}}</td>
 
                             <td>
                                 <a href="/userss/{{$can->id}}" class="btn btn-info">Details</a>
