@@ -36,7 +36,7 @@
     @include('frontend.partials.header')
 
 
-    <div class="content-wrapper">
+    <div class="content-wrapper pt-3">
         <!-- Content Wrapper. Contains page content -->
     @yield('frontContent')
     <!-- /.content -->

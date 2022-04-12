@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="{{route('frontend.layout.userhome')}}" >Online Voting System</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{route('frontend.layout.userhome')}}">
+            <img src="{{asset('uploads/logo.jpg')}}" alt="..." height="50" width="70">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -45,19 +47,5 @@
     </ul>
     @endguest
 
+    </div>
 </nav>
-<div class = "ha">
-
-    <header class="masthead">
-        <div class="container position-relative px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="site-heading">
-                        <h1>Voting System</h1>
-                        <span class="subheading">“Voting is not only our right—it is our power.” </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-</div>

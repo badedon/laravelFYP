@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Userpanel\Userevent;
 
 use App\Http\Controllers\Controller;
+use App\Models\EventOne;
 use App\Models\Userevent;
 use App\Models\Userhome;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class UsereventController extends Controller
      */
     public function index()
     {
-        return view('frontend.Event.userevent');
+        $event= EventOne::get();
+        return view('frontend.Event.userevent',compact('event'));
     }
 //    public function userevent(){
 //        $userevent= Userevent::get();
