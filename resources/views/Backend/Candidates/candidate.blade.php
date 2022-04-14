@@ -120,6 +120,7 @@
                     <th>Candidates name</th>
                     <th>Candidates Position</th>
                     <th>Event</th>
+                    <th>Vote Count</th>
                     <th> Candidates Image</th>
                     <th>Action</th>
                 </tr>
@@ -131,6 +132,7 @@
                         <td>{{$can->name}}</td>
                         <td>{{$can->position}}</td>
                         <td>{{$can->event->name}}</td>
+                        <td>{{$can->vote}}</td>
                         <td><img src="{{asset('uploads/'.$can->image)}}"
                                  alt="No image" width="80" height="80"></td>
                         <td>

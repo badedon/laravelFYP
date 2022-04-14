@@ -11,6 +11,8 @@ use App\Http\Controllers\Userpanel\Vote\VoteController;
 use App\Http\Controllers\Userpanel\Userevent\UsereventController;
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.layout.master');
+    return view('frontend.layout.userhome');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome')->middleware('is_admin');
@@ -76,6 +78,7 @@ Route::get('/userhome',[UserhomeController::class,'index'])->name('frontend.layo
 //
 ////routing for vote page of user panel
 Route::get('/uservote',[VoteController::class,'index'])->name('frontend.Vote.uservote');
+Route::get('/status-update/{id}',[VoteController::class,'status_update'])->middleware('auth');
 
 //
 //routing for event page of user panel

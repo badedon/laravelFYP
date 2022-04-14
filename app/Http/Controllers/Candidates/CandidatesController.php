@@ -31,7 +31,7 @@ class CandidatesController extends Controller
             'name' => 'required',
             'position' => 'required',
             'image' => 'image|nullable',
-            'event_id' => 'required'
+            'event_id' => 'required',
         ]);
         //handle file upload
 
@@ -42,6 +42,7 @@ class CandidatesController extends Controller
         $candidates->name = $request->name;
         $candidates->position = $request->position;
         $candidates->event_id = $request->event_id;
+        $candidates->vote =0;
         if ($request->hasFile('image')) {
             $image_extension = $request->image->getClientOriginalExtension();
             $image_name = rand(11111, 99999) . "." . $image_extension;
@@ -94,6 +95,7 @@ class CandidatesController extends Controller
         $candidates->name = $request->name;
         $candidates->position = $request->position;
         $candidates->event_id = $request->event_id;
+        $candidates->vote =0;
         if ($request->hasFile('image')) {
             //getting file name with the extension
             $candidates = Candidates::findOrFail($candidates->id);

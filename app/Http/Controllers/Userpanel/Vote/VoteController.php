@@ -7,6 +7,8 @@ use App\Models\Candidates;
 use App\Models\Userhome;
 use App\Models\Vote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VoteController extends Controller
 {
@@ -17,79 +19,20 @@ class VoteController extends Controller
      */
     public function index()
     {
-
+        toast('Welcome to the voting page','success');
         $uservote= Candidates::get();
         return view('\frontend\Vote\uservote',compact('uservote'));
     }
-//    public function uservote()
-//    {
-//        $uservote= Vote::get();
-//        return view('\frontend\Vote\uservote',compact('uservote'));
-//    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function status_update(Request $request)
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Vote  $vote
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Vote $vote)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Vote  $vote
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Vote $vote)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Vote  $vote
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Vote $vote)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Vote  $vote
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Vote $vote)
-    {
-        //
+        $candidates = Candidates::find($request->id);
+        $candidates->name = $candidates->name;
+        $candidates->position = $candidates->position;
+        $candidates->event_id = $candidates->event_id;
+        $candidates->image = $candidates->image;
+        $candidates->vote += 1;
+        $candidates->update();
+        return redirect('uservote')->with('candidates_updated', "Candidates has been updated successfully");
     }
 }

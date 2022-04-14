@@ -37,7 +37,7 @@
 
             <h3 class="btn-info">{{$can->name}}</h3>
             <h3 class="btn-info">{{$can->position}}</h3>
-            <p><a class="btn btn-primary" href="#">Vote</a></p>
+            <p><a class="btn btn-primary" href="{{url('/status-update',$can->id)}}">Vote</a></p>
         </div>
         @endforeach
     </div>

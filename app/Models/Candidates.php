@@ -8,7 +8,7 @@ use App\Models\EventOne;
 
 class Candidates extends Model
 {
-    protected $fillable = ['name','position','event_id','image'];
+    protected $fillable = ['name','position','event_id','image','vote'];
 
     public function event()
     {
