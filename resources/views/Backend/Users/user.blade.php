@@ -137,8 +137,7 @@
                             <td>{{$can->password}}</td>
 
                             <td>
-                                <a href="/userss/{{$can->id}}" class="btn btn-info">Details</a>
-                                <a href="/edit-users/{{$can->id}}" class="btn btn-success">Edit</a>
+
                                 <a href="/delete-users/{{$can->id}}" class="btn btn-danger"> Delete</a>
                             </td>
                         </tr>

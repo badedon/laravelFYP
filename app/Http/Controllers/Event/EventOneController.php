@@ -56,8 +56,8 @@ class EventOneController extends Controller
 
     public function getEventById($id)
     {
-        $event= EventOne::where('id', $id)->first();
-        return view('\Backend\Event\view-event', compact('event'));
+        $event = EventOne::where('id', $id)->first();
+        return view('\Backend\events\view-event', compact('event'));
     }
 
     public function deleteEvent($id)
@@ -71,7 +71,7 @@ class EventOneController extends Controller
     public function editEvent($id)
     {
         $event= EventOne::find($id);
-        return view('\Backend\Event\edit-event', compact('event'));
+        return view('\Backend\events\edit-event', compact('event'));
     }
 
     public function updateEvent(Request $request)

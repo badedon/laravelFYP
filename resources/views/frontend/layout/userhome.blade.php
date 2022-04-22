@@ -1,69 +1,128 @@
 @extends('frontend.layout.master')
 @section('frontContent')
+    <div class="wrapper">
 
-    <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <img src="front/img/post-bg.jpg" alt="Background Image" height="300px" width="400">
-                        <h2 class="post-title">Election</h2>
-                        <h3 class="post-subtitle">This process of election affords a moral certainty that the office of President will seldom fall to the lot of any man who is not in an eminent degree endowed with the requisite qualifications.”</h3>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Alexander Hamilton, American Politician and Founding Father of the U.S.</a>
 
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
+        <div id="hs_cos_wrapper_widget_7317315056" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><div class="section content-w-columns cwc-section support-organization two-columns">
+                <div class="page-center">
 
-                    <a href="post.html"><h2 class="post-title">Actress and Political Activist</h2></a>
-                    <h3 class="post-subtitle">“I am most concerned about the wealthy owning our democracy. [It] feels as if very real efforts to disable our democracy are underway. Between the way our rights as voters are being attacked, the way elections themselves are being gerrymandered… I really think that if we don’t show up in this moment, we will [have] missed potentially our last opportunity to really check this administration.”</h3>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on September 18, 2021
-                    </p>
+                    <div class="section-header ta-center">
+
+                        <h2 class="h2 section-title">An online voting system with your needs at the forefront.</h2>
+
+                        <div class="section-copy"><p>From secure polling software to the management of complex virtual voting events - we offer a range of online voting software options that exceed expectation.</p></div>
+
+                    </div>
+
+
+                    <div class="row section-entry">
+
+
+      <span class="col col-6">
+      <div class="item-block cwc-item-block">
+
+
+        <span class="item-icon">
+          <img src="https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=55&amp;height=55&amp;name=sub_admin-icon.png" alt="sub_admin-icon" width="55" height="55" srcset="https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=28&amp;height=28&amp;name=sub_admin-icon.png 28w, https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=55&amp;height=55&amp;name=sub_admin-icon.png 55w, https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=83&amp;height=83&amp;name=sub_admin-icon.png 83w, https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=110&amp;height=110&amp;name=sub_admin-icon.png 110w, https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=138&amp;height=138&amp;name=sub_admin-icon.png 138w, https://www.eballot.com/hs-fs/hubfs/sub_admin-icon.png?width=165&amp;height=165&amp;name=sub_admin-icon.png 165w" sizes="(max-width: 55px) 100vw, 55px">
+        </span>
+
+        <div class="item-details">
+          <h4 class="h4 item-title">A reliable online voting tool for your group</h4>
+          <div class="item-copy">Run online elections among different events. Or manage consistent, recurring votes.</div>
+        </div>
+
+      </div>
+      </span>
+
+                        <span class="col col-6">
+      <div class="item-block cwc-item-block">
+
+
+        <span class="item-icon">
+          <img src="https://www.eballot.com/hubfs/eBallot/2019/icon-key.svg" alt="icon-key" width="49" height="46">
+        </span>
+
+        <div class="item-details">
+          <h4 class="h4 item-title">Key electronic voting features</h4>
+          <div class="item-copy"><p>Never again worry about people voting twice or other forms of vote manipulation. Get <g class="gr_ gr_28 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar only-ins replaceWithoutSep" id="28" data-gr-id="28">results</g> instantly.&nbsp;Dive deeper into vote statistics.</p></div>
+        </div>
+
+      </div>
+      </span>
+
+                        <span class="col col-6">
+      <div class="item-block cwc-item-block">
+
+
+        <span class="item-icon">
+          <img src="https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=150&amp;height=116&amp;name=interface-icon.png" alt="interface-icon" width="150" height="116" srcset="https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=75&amp;height=58&amp;name=interface-icon.png 75w, https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=150&amp;height=116&amp;name=interface-icon.png 150w, https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=225&amp;height=174&amp;name=interface-icon.png 225w, https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=300&amp;height=232&amp;name=interface-icon.png 300w, https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=375&amp;height=290&amp;name=interface-icon.png 375w, https://www.eballot.com/hs-fs/hubfs/interface-icon.png?width=450&amp;height=348&amp;name=interface-icon.png 450w" sizes="(max-width: 150px) 100vw, 150px">
+        </span>
+
+        <div class="item-details">
+          <h4 class="h4 item-title">Web app-based voting platform</h4>
+          <div class="item-copy"><p>Send eligible voters to a personalized voting website, no online voting app download required.</p></div>
+        </div>
+
+      </div>
+      </span>
+
+                        <span class="col col-6">
+      <div class="item-block cwc-item-block">
+
+
+        <span class="item-icon">
+          <img src="https://www.eballot.com/hubfs/eBallot/2019/icon-voter.svg" alt="icon-voter" width="60" height="63">
+        </span>
+
+        <div class="item-details">
+          <h4 class="h4 item-title">A pleasant way to cast votes</h4>
+          <div class="item-copy"><p>Your voters deserve a fair and easy to use voting website, accessible&nbsp;from any device.</p></div>
+        </div>
+
+      </div>
+      </span>
+
+                        <span class="col col-6">
+      <div class="item-block cwc-item-block">
+
+
+        <span class="item-icon">
+          <img src="https://www.eballot.com/hubfs/eBallot/2019/icon-admin.svg" alt="icon-admin" width="58" height="62">
+        </span>
+
+        <div class="item-details">
+          <h4 class="h4 item-title">Flexible implementation options</h4>
+          <div class="item-copy"><p>Choose how involved you want to be. Self-administer your vote or let us manage the voting experience.</p></div>
+        </div>
+
+      </div>
+      </span>
+
+                        <span class="col col-6">
+      <div class="item-block cwc-item-block">
+
+
+        <span class="item-icon">
+          <img src="https://www.eballot.com/hubfs/eBallot/2019/icon-customizations.svg" alt="icon-customizations" width="64" height="64">
+        </span>
+
+        <div class="item-details">
+          <h4 class="h4 item-title">Online election system integrations</h4>
+          <div class="item-copy"><p>Each vote is unique. Customization options include technical integrations, paper ballots, vote consulting, and more.</p></div>
+        </div>
+
+      </div>
+      </span>
+
+
+                    </div>
+
+
                 </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">Science has not yet mastered prophecy</h2>
-                        <p class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</p>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on August 24, 2021
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">Failure is not an option</h2>
-                        <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
-                    </a>
-                    <p class="post-meta">
-                        Posted by
-                        <a href="#!">Start Bootstrap</a>
-                        on July 8, 2021
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Pager-->
-                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
             </div>
         </div>
+
     </div>
+
+
 @endsection

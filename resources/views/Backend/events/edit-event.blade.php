@@ -1,7 +1,7 @@
 @extends('Backend.backendLayout')
 @section('content')
-    <h2 class="text-center text-slate-600 font-extrabold text-5xl pb-7">Update Candidates Content</h2>
-    <div class="pl-3 pb-2"> <a href="{{route('candidates')}}" >
+    <h2 class="text-center text-slate-600 font-extrabold text-5xl pb-7">Update Event Content</h2>
+    <div class="pl-3 pb-2"> <a href="{{route('event')}}" >
             <button class="btn btn-success ">Back</button>
         </a></div>
 
@@ -18,30 +18,32 @@
                         </div>
                         <div class="card-body">
 
-                            <form method="POST" action="{{route('candidates.update')}}" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('event.update')}}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
-                                <input type="hidden" name="id" value="{{$candidates->id}}"/>
+                                <input type="hidden" name="id" value="{{$event->id}}"/>
                                 <div class="form-group">
                                     <label for="title">
-                                        Candidates name
+                                        Event Name
                                     </label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter Post name" value="{{$candidates->name}}"/>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Event name" value="{{$event->name}}"/>
 
                                 </div>
                                 <div class="form-group">
-                                    <label for="body">Candidate Position</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Enter Position" value="{{$candidates->position}}"/>
-{{--                                    <textarea name="position"  class="form-control" rows="3">{{$candidates->position}}--}}
+                                    <label for="body">Event Location</label>
+                                    <input type="text" name="location" class="form-control" placeholder="Enter Position" value="{{$event->location}}"/>
+                                    {{--                                    <textarea name="position"  class="form-control" rows="3">{{$candidates->position}}--}}
 
-                               </textarea>
+                                    </textarea>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="formFile" class="form-label">Select image file</label>
-                                    <input class="form-control" type="file" id="formFile"  name="image">
-                                    <img src="{{asset('uploads/'.$candidates->image)}}"
-                                         alt="No image" width="80" height="80">
+                                    <label for="body">Event Start Date</label>
+                                    <input type="date" name="startdate" class="form-control" rows="3"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="body">Event End Date</label>
+                                    <input type="date" name="enddate" class="form-control" rows="3"/>
                                 </div>
 
                                 <button type="submit" class="btn btn-success float-left bg-gradient-cyan" style="vertical-align:middle"> <span>Update Candidates</span></button>

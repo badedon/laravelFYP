@@ -40,24 +40,24 @@
 
                 <li class="nav-item">
                     <a href="{{route('candidates')}}" class="nav-link {{'candidates' == request()->path()? 'active':''}}">
-                        <i class="fa-solid fa-person"></i>
+                        <i class="nav-icon fas fa-chess-king"></i>
                         <p>
-                            Candidate
+                            Candidates
                             <span class="badge badge-info right"></span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('users')}}" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fas fa-people-arrows"></i>
                         <p>
-                            User
+                            Users
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('event')}}" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon fas fa-check-square"></i>
                         <p>
                             Events
                         </p>
@@ -173,32 +173,6 @@
 {{--                </li>--}}
 
 
-
-
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
-                        <p>
-                            Search
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/search/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Search</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/search/enhanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Enhanced</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
 
             </ul>
         </nav>
