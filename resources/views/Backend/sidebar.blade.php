@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('users')}}" class="nav-link">
+                    <a href="{{route('users')}}" class="nav-link {{'user' == request()->path()? 'active':''}}">
                         <i class="nav-icon fas fa-people-arrows"></i>
                         <p>
                             Users
@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('event')}}" class="nav-link">
+                    <a href="{{route('event')}}" class="nav-link {{'event' == request()->path()? 'active':''}}">
                         <i class="nav-icon fas fa-check-square"></i>
                         <p>
                             Events
@@ -64,7 +64,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('result')}}" class="nav-link">
+                    <a href="{{route('result')}}" class="nav-link {{'result' == request()->path()? 'active':''}}">
                         <i class="nav-icon fas fa-columns"></i>
                         <p>
                             Voting Result
@@ -73,7 +73,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('contact')}}" class="nav-link">
+                    <a href="{{route('contact')}}" class="nav-link {{'contact' == request()->path()? 'active':''}}">
                         <i class="nav-icon fas fa-address-card"></i>
                         <p>
                             Contact
