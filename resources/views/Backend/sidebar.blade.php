@@ -74,7 +74,7 @@
 
                 <li class="nav-item">
                     <a href="{{route('contact')}}" class="nav-link">
-                        <i class="nav-icon fas fa-columns"></i>
+                        <i class="nav-icon fas fa-address-card"></i>
                         <p>
                             Contact
                         </p>

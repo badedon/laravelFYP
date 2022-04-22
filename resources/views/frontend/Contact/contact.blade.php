@@ -31,7 +31,7 @@
                     <div class="row">
 
                         <!--Grid column-->
-                        <div class="col-md-6">
+                        <div class="col-md-6 pt-3">
                             <div class="md-form mb-0">
                                 <input type="text" id="name" name="name" class="form-control">
                                 <label for="name" class="">Your name</label>
@@ -40,7 +40,7 @@
                         <!--Grid column-->
 
                         <!--Grid column-->
-                        <div class="col-md-6">
+                        <div class="col-md-6 pt-3">
                             <div class="md-form mb-0">
                                 <input type="text" id="email" name="email" class="form-control">
                                 <label for="email" class="">Your email</label>
@@ -53,7 +53,7 @@
 
                     <!--Grid row-->
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 pt-3">
                             <div class="md-form mb-0">
                                 <input type="text" id="subject" name="subject" class="form-control">
                                 <label for="subject" class="">Subject</label>
@@ -66,7 +66,7 @@
                     <div class="row">
 
                         <!--Grid column-->
-                        <div class="col-md-12">
+                        <div class="col-md-12 pt-3 pb-4">
 
                             <div class="md-form">
                                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
@@ -93,11 +93,11 @@
                     </li>
 
                     <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                        <p>+977 9857895169</p>
+                        <p>+977 9803330871</p>
                     </li>
 
                     <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                        <p>contact@onlinevoting.com</p>
+                        <p>nishanbade00@gmail.com </p>
                     </li>
                 </ul>
             </div>
