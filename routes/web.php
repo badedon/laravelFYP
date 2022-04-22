@@ -1,8 +1,9 @@
 <?php
 //adding candidates controller path
 use App\Http\Controllers\Candidates\CandidatesController;
+use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Event\EventOneController;
-use App\Http\Controllers\Userpanel\Contact\ContactController;
+use App\Http\Controllers\Userpanel\Contact\UserContactController;
 use App\Http\Controllers\VotingResult\ResultController;
 use App\Http\Controllers\Admin\UsersController;
 use app\Http\Controllers\HomeController;
@@ -67,6 +68,10 @@ Route::get('/edit-event/{id}',[EventOneController::class,'editEvent']);
 Route::put('/update-event',[EventOneController::class,'updateEvent'])->name('event.update');
 
 
+//routing for Contact
+Route::get('/contact',[ContactController::class,'contactAdmin'])->name('contact');
+Route::post('/create-contact',[ContactController::class,'createContact'])->name('contact.create');
+Route::get('/contacts',[ContactController::class,'getContact']);
 
 
 //routing for voting result
@@ -85,4 +90,4 @@ Route::get('/status-update/{id}',[VoteController::class,'status_update'])->middl
 Route::get('/user-event',[UsereventController::class,'index'])->name('frontend.Event.userevent');
 
 //routing for contact page of user panel
-Route::get('/contact',[ContactController::class,'index'])->name('frontend.Contact.contact');
+Route::get('/user-contact',[UserContactController::class,'index'])->name('frontend.Contact.contact');
